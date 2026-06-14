@@ -1,0 +1,37 @@
+license_id: cc-by
+methodology: Other
+methodology_other: >
+  WIKIMPACT is a global disaster impact database compiled from multiple sources,
+  providing quantitative estimates of human and economic consequences of natural
+  disaster events. Each event record contains minimum, maximum, and approximate
+  flag values reflecting reporting uncertainty across seven impact dimensions:
+  deaths, affected persons, displaced, homeless, injuries, buildings damaged,
+  economic damage, and insured damage.
+
+  The database is described in: Danielsson et al. (2026), WIKIMPACT: A global
+  database of disaster impacts. Natural Hazards and Earth System Sciences, 26,
+  2609. https://nhess.copernicus.org/articles/26/2609/2026/
+dataset_source: WIKIMPACT / Bolin Centre for Climate Research, Stockholm University
+package_creator: HDX Data Systems Team
+private: False
+notes: >
+  This dataset provides the WIKIMPACT global impact database (v1.1.1), containing
+  quantitative impact estimates for natural disaster events worldwide.
+
+
+  Each record provides minimum and maximum values plus an "approximate" flag
+  (1 = approximate single-point estimate, 0 = verified range) for eight impact
+  dimensions: deaths, affected persons, displaced, homeless, injuries, buildings
+  damaged, economic damage, and insured damage. Damage figures include the
+  currency unit and inflation-adjustment reference year.
+
+
+  Administrative areas may span multiple entries (pipe-separated) for events
+  affecting more than one country or region.
+
+
+  Reference paper: https://nhess.copernicus.org/articles/26/2609/2026/
+
+
+  The database is maintained by the Bolin Centre for Climate Research, Stockholm
+  University. Version 2.0 is expected in late 2026.

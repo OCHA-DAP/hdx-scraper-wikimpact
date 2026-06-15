@@ -14,7 +14,7 @@ dynamic = ["version"]
 requires-python = ">=3.13"
 dependencies = [
   "hdx-python-api",
-  "hdx-python-utilities==4.0.8",
+  "hdx-python-utilities",
 ]
 
 [dependency-groups]

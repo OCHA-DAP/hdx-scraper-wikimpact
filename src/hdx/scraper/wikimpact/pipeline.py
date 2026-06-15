@@ -132,12 +132,16 @@ def _row_from_db(db_row) -> dict:
         "Total_Injuries_Approx": _val(db_row["Total_Injuries_Approx"]),
         "Total_Buildings_Damaged_Min": _val(db_row["Total_Buildings_Damaged_Min"]),
         "Total_Buildings_Damaged_Max": _val(db_row["Total_Buildings_Damaged_Max"]),
-        "Total_Buildings_Damaged_Approx": _val(db_row["Total_Buildings_Damaged_Approx"]),
+        "Total_Buildings_Damaged_Approx": _val(
+            db_row["Total_Buildings_Damaged_Approx"]
+        ),
         "Total_Damage_Min": _val(db_row["Total_Damage_Min"]),
         "Total_Damage_Max": _val(db_row["Total_Damage_Max"]),
         "Total_Damage_Approx": _val(db_row["Total_Damage_Approx"]),
         "Total_Damage_Unit": _val(db_row["Total_Damage_Unit"]),
-        "Total_Damage_Inflation_Adjusted": _val(db_row["Total_Damage_Inflation_Adjusted"]),
+        "Total_Damage_Inflation_Adjusted": _val(
+            db_row["Total_Damage_Inflation_Adjusted"]
+        ),
         "Total_Damage_Inflation_Adjusted_Year": _val(
             db_row["Total_Damage_Inflation_Adjusted_Year"]
         ),

@@ -14,7 +14,7 @@ class TestWikimpact:
         "groups": [{"name": "world"}],
         "maintainer": "196196be-6037-4488-8b71-d786adf4c081",
         "name": "wikimpact-impact-database",
-        "owner_org": "ebcfe377-bad0-46d0-b68f-cca8e6b54e33",
+        "owner_org": "hdx",
         "subnational": "0",
         "tags": [
             {
@@ -32,6 +32,12 @@ class TestWikimpact:
         "description": "WIKIMPACT global disaster impact events",
         "format": "csv",
         "name": "wikimpact_impact_events.csv",
+    }
+    db_resource = {
+        "description": "Original WIKIMPACT SQLite database",
+        "format": "SQLite",
+        "name": "impactdb.v1.1.1.dg_filled.db",
+        "url": "https://bolin.su.se/data/s3/upload-next/next-s3-uploads/97bd6a06-51be-4ee8-a00e-83e4c91b8ffe/impactdb.v1.1.1.dg_filled.db",
     }
 
     def test_generate_dataset(self, configuration, fixtures_dir, input_dir):
@@ -53,6 +59,7 @@ class TestWikimpact:
                 assert dataset == self.global_dataset
                 resources = dataset.get_resources()
                 assert resources[0] == self.global_resource
+                assert resources[1] == self.db_resource
 
                 filename = "wikimpact_impact_events.csv"
                 assert_files_same(fixtures_dir / filename, tempdir / filename)

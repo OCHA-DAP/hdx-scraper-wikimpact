@@ -7,12 +7,13 @@ import sqlite3
 
 from hdx.api.configuration import Configuration
 from hdx.data.dataset import Dataset
+from hdx.data.resource import Resource
 from hdx.utilities.retriever import Retrieve
 
 logger = logging.getLogger(__name__)
 
 _MAINTAINER = "196196be-6037-4488-8b71-d786adf4c081"
-_OWNER_ORG = "ebcfe377-bad0-46d0-b68f-cca8e6b54e33"
+_OWNER_ORG = "hdx"
 
 _HEADERS = [
     "Event_ID",
@@ -62,7 +63,8 @@ def _parse_list(value) -> list:
         return []
     if isinstance(value, list):
         return value
-    return ast.literal_eval(value)
+    parsed = ast.literal_eval(value)
+    return parsed if parsed is not None else []
 
 
 def _join_list(value) -> str:
@@ -173,7 +175,9 @@ class Pipeline:
 
     def generate_dataset(self) -> Dataset | None:
         url = self._configuration["db_url"]
-        db_path = self._retriever.download_file(url, "impactdb.db")
+        db_path = self._retriever.download_file(
+            url, "impactdb.db", resume=True, retries=5
+        )
 
         con = sqlite3.connect(db_path)
         con.row_factory = sqlite3.Row
@@ -240,4 +244,16 @@ class Pipeline:
             headers=_HEADERS,
             no_empty=False,
         )
+
+        db_filename = url.rsplit("/", 1)[-1]
+        db_resource = Resource(
+            {
+                "name": db_filename,
+                "description": "Original WIKIMPACT SQLite database",
+                "url": url,
+                "format": "SQLite",
+            }
+        )
+        dataset.add_update_resource(db_resource)
+
         return dataset

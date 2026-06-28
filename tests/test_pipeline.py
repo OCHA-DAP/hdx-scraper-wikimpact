@@ -26,7 +26,7 @@ class TestWikimpact:
                 "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1",
             },
         ],
-        "title": "WIKIMPACT Impact Database",
+        "title": "Global - WIKIMPACT Impact Database",
     }
     global_resource = {
         "description": "WIKIMPACT global disaster impact events",

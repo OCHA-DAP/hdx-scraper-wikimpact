@@ -217,7 +217,7 @@ class Pipeline:
         dataset = Dataset(
             {
                 "name": "wikimpact-impact-database",
-                "title": "WIKIMPACT Impact Database",
+                "title": "Global - WIKIMPACT Impact Database",
             }
         )
         dataset.add_other_location("world")

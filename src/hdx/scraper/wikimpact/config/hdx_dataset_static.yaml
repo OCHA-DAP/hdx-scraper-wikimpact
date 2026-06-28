@@ -1,18 +1,22 @@
-license_id: cc-by
+license_id: cc-by-nc
 methodology: Other
 methodology_other: >
-  WIKIMPACT is a global disaster impact database compiled from multiple sources,
-  providing quantitative estimates of human and economic consequences of natural
-  disaster events. Each event record contains minimum, maximum, and approximate
-  flag values reflecting reporting uncertainty across seven impact dimensions:
+  Wikimpacts 1.0 is a global climate impact database compiled from multiple sources,
+  providing quantitative estimates of human and economic consequences of climate-related
+  hazard events. Each event record contains minimum, maximum, and approximate
+  flag values reflecting reporting uncertainty across eight impact dimensions:
   deaths, affected persons, displaced, homeless, injuries, buildings damaged,
   economic damage, and insured damage.
-dataset_source: WIKIMPACT / Bolin Centre for Climate Research, Stockholm University
+dataset_source: >
+  Swedish Centre for Impacts of Climate Extremes (Uppsala University and Research
+  Institutes of Sweden); Department of Water and Climate (Free University of Brussels);
+  Helmholtz Centre for Environmental Research; Bolin Centre for Climate Research
+  (Stockholm University)
 package_creator: HDX Data Systems Team
 private: False
 notes: >
-  This dataset provides the WIKIMPACT global impact database containing
-  quantitative impact estimates for natural disaster events worldwide.
+  This dataset includes a subset of the Wikimpacts 1.0 global climate impact database,
+  containing quantitative impact estimates for climate-related hazards worldwide.
 
 
   Each record provides minimum and maximum values plus an "approximate" flag
@@ -23,12 +27,16 @@ notes: >
 
 
   Administrative areas may span multiple entries (pipe-separated) for events
-  affecting more than one country or region.
+  affecting more than one country or location. The Wikimpacts 1.0 database is a
+  joint initiative of the Swedish Centre for Impacts of Climate Extremes at Uppsala
+  University and Research Institutes of Sweden, the Department of Water and Climate
+  at the Free University of Brussels and the Helmholtz Centre for Environmental
+  Research. The static version of the database is hosted by the Bolin Centre for
+  Climate Research, Stockholm University.
 
-  The database is maintained by the Bolin Centre for Climate Research, Stockholm
-  University.
 
-
-  Reference: Danielsson et al. (2026), WIKIMPACT: A global database of disaster
-  impacts. Natural Hazards and Earth System Sciences, 26, 2609.
-  https://nhess.copernicus.org/articles/26/2609/2026/
+  Reference: Li, N., Thiery, W., Zahra, S., Madruga de Brito, M., Worou, K.,
+  Kurfalı, M., Lampe, S., Muñoz, P., Flynn, C., Trigoso, C., Nivre, J.,
+  Zscheischler, J., and Messori, G.: Wikimpacts 1.0: a new global climate impact
+  database based on automated information extraction from Wikipedia, Nat. Hazards
+  Earth Syst. Sci., 26, 2609–2636, https://doi.org/10.5194/nhess-26-2609-2026, 2026.

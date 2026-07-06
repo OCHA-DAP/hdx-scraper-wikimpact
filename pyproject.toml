@@ -16,6 +16,15 @@ dependencies = [
   "hdx-python-api",
   "hdx-python-utilities >=4.1.2",
 ]
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/OCHA-DAP/hdx-scraper-wikimpact"
+Repository = "https://github.com/OCHA-DAP/hdx-scraper-wikimpact"
+Issues = "https://github.com/OCHA-DAP/hdx-scraper-wikimpact/issues"
+
+[project.scripts]
+run = "hdx.scraper.wikimpact.__main__:main"
 
 [dependency-groups]
 dev = [
@@ -24,9 +33,6 @@ dev = [
   "pre-commit",
   "ruff==0.14.14",
 ]
-
-[project.scripts]
-run = "hdx.scraper.wikimpact.__main__:main"
 
 # ----------------------------------------------------------------------------
 # Hatchling (Build & Versioning)

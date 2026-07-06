@@ -5,6 +5,36 @@
 
 This script downloads the WIKIMPACT global disaster impact database (SQLite), converts the `Total_Summary` table to a CSV, and publishes both to HDX as a single global dataset.
 
+## Data Pipeline
+
+### API reads
+
+- **WIKIMPACT database read**: the WIKIMPACT SQLite database file is
+  downloaded from the URL configured in `project_configuration.yaml`.
+
+### API writes
+
+- **Global dataset** (1 write): a single global HDX dataset
+  (`wikimpact-impact-database`) containing the flattened CSV and a link
+  resource to the original SQLite database.
+
+### Temporary files
+
+- 1 SQLite database file, downloaded and read then discarded.
+
+### Uploaded files
+
+- Global disaster impact events CSV (`wikimpact_impact_events.csv`),
+  flattened from the `Total_Summary` table.
+- Link resource pointing to the original WIKIMPACT SQLite database.
+
+### Transformations
+
+1. **Flattening**: each row of the `Total_Summary` table is converted to a
+   flat dict, with list columns pipe-joined (e.g. `['MEX']` -> `MEX`).
+2. **Time period derivation**: the dataset's time period is derived from the
+   minimum `Start_Date` and maximum `End_Date` across all rows.
+
 ## Development
 
 ### Environment

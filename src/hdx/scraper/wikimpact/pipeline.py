@@ -67,8 +67,12 @@ def _parse_list(value) -> list:
     return parsed if parsed is not None else []
 
 
+def _str_or_blank(item) -> str:
+    return "" if item is None else str(item)
+
+
 def _join_list(value) -> str:
-    return "|".join(str(item) for item in _parse_list(value))
+    return "|".join(_str_or_blank(item) for item in _parse_list(value))
 
 
 def _join_gid_list(value) -> str:
@@ -76,9 +80,9 @@ def _join_gid_list(value) -> str:
     parts = []
     for inner in _parse_list(value):
         if isinstance(inner, list):
-            parts.append(",".join(str(g) for g in inner))
+            parts.append(",".join(_str_or_blank(g) for g in inner))
         else:
-            parts.append(str(inner))
+            parts.append(_str_or_blank(inner))
     return "|".join(parts)
 
 

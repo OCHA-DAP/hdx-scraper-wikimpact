@@ -13,7 +13,7 @@ from hdx.utilities.retriever import Retrieve
 logger = logging.getLogger(__name__)
 
 _MAINTAINER = "196196be-6037-4488-8b71-d786adf4c081"
-_OWNER_ORG = "hdx"
+_OWNER_ORG = "8d1a8248-a48f-440a-9ff3-e659e9a917d8"
 
 _HEADERS = [
     "Event_ID",
@@ -221,7 +221,7 @@ class Pipeline:
         dataset = Dataset(
             {
                 "name": "wikimpact-impact-database",
-                "title": "Global - WIKIMPACT Impact Database",
+                "title": "Global - Wikimpacts Climate Impact Database",
             }
         )
         dataset.add_other_location("world")
@@ -238,7 +238,7 @@ class Pipeline:
         filename = "wikimpact_impact_events.csv"
         resourcedata = {
             "name": filename,
-            "description": "WIKIMPACT global disaster impact events",
+            "description": "Wikimpacts global climate impact events",
         }
         dataset.generate_resource(
             self._folder,
@@ -253,7 +253,7 @@ class Pipeline:
         db_resource = Resource(
             {
                 "name": db_filename,
-                "description": "Original WIKIMPACT SQLite database",
+                "description": "Original Wikimpacts SQLite database",
                 "url": url,
                 "format": "SQLite",
             }

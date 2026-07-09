@@ -9,6 +9,7 @@ import logging
 from os.path import expanduser, join
 
 from hdx.api.configuration import Configuration
+from hdx.data.user import User
 from hdx.facades.infer_arguments import facade
 from hdx.utilities.dateparse import now_utc
 from hdx.utilities.downloader import Download
@@ -39,6 +40,12 @@ def main(
         None
     """
     logger.info(f"##### {_LOOKUP} version {__version__} ####")
+    if not User.check_current_user_organization_access(
+        "8d1a8248-a48f-440a-9ff3-e659e9a917d8", "create_dataset"
+    ):
+        raise PermissionError(
+            "API Token does not give access to Wikimpacts organisation!"
+        )
     configuration = Configuration.read()
 
     with wheretostart_tempdir_batch(folder=_LOOKUP) as info:

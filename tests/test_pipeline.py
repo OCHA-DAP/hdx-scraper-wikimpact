@@ -14,7 +14,7 @@ class TestWikimpact:
         "groups": [{"name": "world"}],
         "maintainer": "196196be-6037-4488-8b71-d786adf4c081",
         "name": "wikimpact-impact-database",
-        "owner_org": "hdx",
+        "owner_org": "8d1a8248-a48f-440a-9ff3-e659e9a917d8",
         "subnational": "0",
         "tags": [
             {
@@ -26,15 +26,15 @@ class TestWikimpact:
                 "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1",
             },
         ],
-        "title": "Global - WIKIMPACT Impact Database",
+        "title": "Global - Wikimpacts Climate Impact Database",
     }
     global_resource = {
-        "description": "WIKIMPACT global disaster impact events",
+        "description": "Wikimpacts global climate impact events",
         "format": "csv",
         "name": "wikimpact_impact_events.csv",
     }
     db_resource = {
-        "description": "Original WIKIMPACT SQLite database",
+        "description": "Original Wikimpacts SQLite database",
         "format": "SQLite",
         "name": "impactdb.v1.1.1.dg_filled.db",
         "url": "https://bolin.su.se/data/s3/upload-next/next-s3-uploads/97bd6a06-51be-4ee8-a00e-83e4c91b8ffe/impactdb.v1.1.1.dg_filled.db",
